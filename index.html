@@ -90,9 +90,9 @@
 </head>
 <body>
     <div id="zgs-ai">ZGS-AI</div>
-    <div id="how-can-help">Under Development -by Garvit</div>
+    <div id="how-can-help">How Can I Help?</div>
     <div id="app">
-        <input type="text" id="question" placeholder="Your Name ...." />
+        <input type="text" id="question" placeholder="Ask me anything..." />
         <button onclick="askAI()">Get Answer</button>
     </div>
     <div id="response"></div>
@@ -123,9 +123,9 @@
             "yash": "Kya Btau dono rude hai 🙂",
             "manan": "Meraa Bhaiiii !!!!!!! 🤩",
             "anika": "Sorry, I can't assist with that DiDi",
-            "arham": "My Best Friend 🤩",
             "yanvi": "Sorry, I can't assist with that DiDi",
             "divyanshu": "My Friend , But other side no friends",
+            "arham": "My Best Friend 🤩"
         };
 
         function askAI() {
@@ -138,7 +138,7 @@
             } else if (question.includes("who are you") || question.includes("what is your name")) {
                 responseDiv.textContent = "I am ZGS-AI, your helpful assistant!";
             } else {
-                responseDiv.textContent = "Sorry, I don't have an answer for that. Try asking something else!";
+                responseDiv.textContent = "Sorry, I don't have an answer for that. Tell Any Name of Someone in Our Class!";
             }
 
             document.getElementById("question").value = ""; // Clear the input after response
