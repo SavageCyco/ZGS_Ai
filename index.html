@@ -90,31 +90,54 @@
 </head>
 <body>
     <div id="zgs-ai">ZGS-AI</div>
-    <div id="how-can-help">Developing More...</div>
+    <div id="how-can-help">Your Name ....</div>
     <div id="app">
-        <input type="text" id="question" placeholder="Ask..." />
+        <input type="text" id="question" placeholder="Ask me anything..." />
         <button onclick="askAI()">Get Answer</button>
     </div>
     <div id="response"></div>
 
     <script>
+        const responses = {
+            "garvit": "Creator of ZGS-AI 💫",
+            "varun": "A Great Friend and a Leader 🌟",
+            "sawant": "Shampoooooo",
+            "arnav": "One of the smartest guys around! 🧠",
+            "aarav": "Ye To Badmosh Hai !",
+            "naman": "Naman is Garvit's Best Friend 😊",
+            "farhan": "Roblox's Most Maxy Pro Man on the Earth",
+            "lakshita": "Sorry, I can't assist with that DiDi",
+            "aanya": "Sorry, I can't assist with that DiDi",
+            "manya": "Sorry, I can't assist with that DiDi",
+            "vanshika": "Sorry, I can't assist with that DiDi",
+            "tanvi": "Sorry, I can't assist with that DiDi",
+            "gunjan": "Sorry, I can't assist with that DiDi",
+            "ranjana": "Our Great IT Teacher",
+            "kanishka": "Sorry, I can't assist with that DiDi",
+            "vani": "Social Media Addict",
+            "ayush": "Bhola Bhala Bacha",
+            "parul": "What should I write Broo ! , Science teacher",
+            "shama": "what should I write Broo ! , Sanskrit and Hindi teacher",
+            "sarita": "Bhai Mai to dargaya , Mai Kuch Ni bolra (Hard Ways to Die)",
+            "karishma": "THE W TEACHER (BESTEST TEACHER GREATEST ) 💫",
+            "yash": "Kya Btau dono rude hai 🙂",
+            "manan": "Meraa Bhaiiii !!!!!!! 🤩",
+            "anika": "Sorry, I can't assist with that DiDi",
+            "yanvi": "Sorry, I can't assist with that DiDi",
+            "divyanshu": "My Friend , But other side no friends",
+        };
+
         function askAI() {
-            const question = document.getElementById("question").value.trim();
+            const question = document.getElementById("question").value.trim().toLowerCase();
             const responseDiv = document.getElementById("response");
 
-            // Simple responses based on the question
-            if (question.toLowerCase().includes("who are you")) {
+            // Check if question matches any name
+            if (responses[question]) {
+                responseDiv.textContent = responses[question];
+            } else if (question.includes("who are you") || question.includes("what is your name")) {
                 responseDiv.textContent = "I am ZGS-AI, your helpful assistant!";
-            } else if (question.toLowerCase().includes("what is your name")) {
-                responseDiv.textContent = "My name is ZGS-AI!";
-            } else if (question.toLowerCase().includes("creator")) {
-                responseDiv.textContent = "I was created by Garvit, the creator of ZGS-AI!";
-            } else if (question.toLowerCase().includes("what is zgs-ai")) {
-                responseDiv.textContent = "ZGS-AI is a smart assistant designed to help you with various tasks!";
-            } else if (question.toLowerCase().includes("hello") || question.toLowerCase().includes("hi")) {
-                responseDiv.textContent = "Hello! How can I assist you today?";
             } else {
-                responseDiv.textContent = "Develop Hora Hu !";
+                responseDiv.textContent = "Sorry, I don't have an answer for that. Try asking something else!";
             }
 
             document.getElementById("question").value = ""; // Clear the input after response
